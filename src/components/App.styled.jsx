@@ -7,3 +7,14 @@ export const AppBox = styled.div`
   padding-bottom: 24px;
   justify-content: center;
 `;
+
+export const Error = styled.p`
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 30px 50px;
+  color: red;
+  font-size: 26px;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+`;

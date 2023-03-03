@@ -1,26 +1,28 @@
 import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { Gallery } from './ImageGallery.styled';
-import { useEffect, useRef } from 'react';
+// import { useEffect, useRef } from 'react';
 
 export function ImageGallery({ gallery, children }) {
-  const listRef = useRef(null);
-  const currentListRef = listRef.current;
+  // Скролл на хуках в галереї
 
-  useEffect(() => {
-    if (currentListRef) {
-      const list = listRef.current;
+  // const listRef = useRef(null);
+  // const currentListRef = listRef.current;
 
-      window.scrollBy({
-        top: list.scrollHeight - list.scrollTop,
-        behavior: 'smooth',
-      });
-    }
-  }, [gallery, currentListRef]);
+  // useEffect(() => {
+  //   if (currentListRef) {
+  //     const list = listRef.current;
+
+  //     window.scrollBy({
+  //       top: list.scrollHeight - list.scrollTop,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // }, [gallery, currentListRef]);
 
   return (
     <>
-      <Gallery ref={listRef}>
+      <Gallery>
         {gallery &&
           gallery.map(item => {
             return <ImageGalleryItem key={item.id} item={item} />;
