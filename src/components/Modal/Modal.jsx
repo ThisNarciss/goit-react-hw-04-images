@@ -7,21 +7,20 @@ const modalRoot = document.getElementById('modal-root');
 
 export function Modal({ onModalClose, largeImg, tag }) {
   useEffect(() => {
+    function handleEscape(evt) {
+      if (evt.code === 'Escape') {
+        onModalClose();
+      }
+    }
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  });
+  }, [onModalClose]);
 
   const handleClick = evt => {
     if (evt.currentTarget === evt.target) {
       onModalClose();
     }
   };
-
-  function handleEscape(evt) {
-    if (evt.code === 'Escape') {
-      onModalClose();
-    }
-  }
 
   return createPortal(
     <Overlay onClick={handleClick}>

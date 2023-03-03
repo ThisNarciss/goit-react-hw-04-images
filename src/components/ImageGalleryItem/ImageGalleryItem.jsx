@@ -9,13 +9,19 @@ export function ImageGalleryItem({
 }) {
   const [showModal, setShowModal] = useState(false);
   const itemRef = useRef(null);
+
   useEffect(() => {
     if (itemRef.current) {
+      // const rect = itemRef.current.getBoundingClientRect();
       itemRef.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
+        // top: rect.top - 150,
       });
+      // itemRef.current.scrollTop -= 20;
+      // document.getElementById('containingDiv').scrollTop -= 10;
+      // console.log(document.getElementById('containingDiv'));
     }
   }, []);
 

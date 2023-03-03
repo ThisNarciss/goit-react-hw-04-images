@@ -22,7 +22,7 @@ export function ImageGallery({ gallery, children }) {
 
   return (
     <>
-      <Gallery>
+      <Gallery id="containingDiv">
         {gallery &&
           gallery.map(item => {
             return <ImageGalleryItem key={item.id} item={item} />;
