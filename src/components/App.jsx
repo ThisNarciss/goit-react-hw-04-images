@@ -40,13 +40,11 @@ export function App() {
   };
 
   const handleSubmit = values => {
-    setPage(1);
     if (search !== values.search) {
+      setPage(1);
       setSearch(values.search);
-    } else {
-      setSearch('');
+      setGallery([]);
     }
-    setGallery([]);
   };
 
   return (
