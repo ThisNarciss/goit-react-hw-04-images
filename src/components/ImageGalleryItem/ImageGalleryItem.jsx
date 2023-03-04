@@ -13,12 +13,15 @@ export function ImageGalleryItem({
   useEffect(() => {
     if (itemRef.current) {
       // const rect = itemRef.current.getBoundingClientRect();
+      itemRef.current.style.scrollMarginTop = '80px';
       itemRef.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
         // top: rect.top - 150,
       });
+      itemRef.current.style.scrollMarginTop = '0px';
+      // itemRef.current.scrollBy(0, -30);
       // itemRef.current.scrollTop -= 20;
       // document.getElementById('containingDiv').scrollTop -= 10;
       // console.log(document.getElementById('containingDiv'));
